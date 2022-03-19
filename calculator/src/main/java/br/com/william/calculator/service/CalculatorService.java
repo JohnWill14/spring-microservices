@@ -23,10 +23,7 @@ public class CalculatorService {
     }
 
     public Double multiply(Double a, Double b){
-        if(b==0){
-            throw new ArithmeticException("division by zero");
-        }
-        return a / b;
+        return a * b;
     }
 
 }
