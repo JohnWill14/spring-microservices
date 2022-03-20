@@ -1,6 +1,4 @@
-# spring-microservices
-
-#Projeto calculadora
+# Projeto calculadora
 
   Projeto para recapitular tópicos de APIs rest
   
