@@ -22,4 +22,15 @@ public class handlerException  extends ResponseEntityExceptionHandler {
                 .build();
         return new ResponseEntity<>(exceptionSchema, HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(UnsupportedOperationException.class)
+    public ResponseEntity<?> handleAllAUnsupportedOperationException(UnsupportedOperationException unsupportedOperationException){
+        ErrorDetails exceptionSchema = ErrorDetails.builder()
+                .messageException(unsupportedOperationException.getMessage())
+                .typeErro(unsupportedOperationException.getClass().getSimpleName())
+                .erroCode(HttpStatus.BAD_REQUEST)
+                .timeException(LocalDateTime.now())
+                .build();
+        return new ResponseEntity<>(exceptionSchema, HttpStatus.BAD_REQUEST);
+    }
 }
