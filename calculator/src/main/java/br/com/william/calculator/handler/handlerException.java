@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @ControllerAdvice
 public class handlerException  extends ResponseEntityExceptionHandler {
     @ExceptionHandler(ArithmeticException.class)
-    public ResponseEntity<?> handleAllBadRequestException(ArithmeticException arithmeticException){
+    public ResponseEntity<?> handleAllArithmeticException(ArithmeticException arithmeticException){
         ErrorDetails exceptionSchema = ErrorDetails.builder()
                 .messageException(arithmeticException.getMessage())
                 .typeErro(arithmeticException.getClass().getSimpleName())
