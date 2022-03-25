@@ -6,7 +6,7 @@ spring:
     name: cambio-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/cambio_service?useTimezone=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/cambio-service?useTimezone=true&serverTimezone=UTC
     username: root
     password: gandalf
     testWhileIdle: true
@@ -20,6 +20,6 @@ spring:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
   flyway:
     url: jdbc:mysql://localhost:3306/
-    schemas: cambio_service
+    schemas: cambio-service
     user: root
     password: gandalf
