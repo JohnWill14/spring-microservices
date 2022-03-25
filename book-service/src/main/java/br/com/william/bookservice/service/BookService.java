@@ -14,7 +14,9 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class BookService {
     private final BookRepository bookRepository;
-    private final CambioService cambioService;
+//    private final CambioServiceRestTemplate cambioService;
+
+    private final  CambioServiceFeign cambioService;
     private final EnvironmentUtil environmentUtil;
 
     public Book findBookByIdForACurrency(Long id, String currency){

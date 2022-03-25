@@ -4,7 +4,6 @@ import br.com.william.bookservice.response.Cambio;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
@@ -13,7 +12,7 @@ import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
-public class CambioService {
+public class CambioServiceRestTemplate {
     private final String URL = "http://localhost:8000/cambio-service/{amount}/{from}/{to}";
     public Cambio getCambio(BigDecimal amount, String from, String to){
         RestTemplate restTemplate = new RestTemplate();
