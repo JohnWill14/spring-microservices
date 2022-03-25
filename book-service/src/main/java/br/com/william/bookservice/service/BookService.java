@@ -25,6 +25,7 @@ public class BookService {
 
         BigDecimal bookPrice = cambio.getConversionValue();
         book.setConversionValue(bookPrice);
+        book.setEnvironment(book.getEnvironment()+" CAMBIO: "+cambio.getEnvironment());
 
         return book;
     }
@@ -33,7 +34,7 @@ public class BookService {
         Optional<Book> optionalBook = bookRepository.findById(id);
         Book book = optionalBook.orElseThrow(() -> new RuntimeException("ERRO ! id not found"));
 
-        book.setEnvironment(environmentUtil.getLocalSeverPort());
+        book.setEnvironment("BOOK: "+environmentUtil.getLocalSeverPort());
 
         return book;
     }

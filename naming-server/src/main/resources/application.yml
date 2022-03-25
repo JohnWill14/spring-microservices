@@ -7,5 +7,7 @@ spring:
 
 eureka:
   client:
-    register-with-eureka: false # auto registração desabilitada
+    register-with-eureka: false # auto registraï¿½ï¿½o desabilitada
     fetch-registry: false
+    service-url:
+      defaultZone: http://naming-server:8761/eureka
