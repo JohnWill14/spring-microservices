@@ -9,7 +9,7 @@ spring:
     name: api-gateway
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
