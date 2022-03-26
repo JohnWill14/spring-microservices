@@ -6,6 +6,7 @@ spring:
     name: naming-server
 
 eureka:
+  renewalPercentThreshold: 0.85
   client:
     register-with-eureka: false # auto registra��o desabilitada
     fetch-registry: false
