@@ -14,13 +14,17 @@ import org.springframework.web.client.RestTemplate;
 @Log4j2
 public class FooBarController {
     @GetMapping("foo-bar")
-    @Retry(name = "default")
+    @Retry(name = "default", fallbackMethod = "fallbackMethod")
     public String fooBar(){
-//       log.info("Tentando executar");
-//        new RestTemplate()
-//                .getForEntity("http://localhost:8765/book-service/foo-bar",
-//                        String.class);
+       log.info("Tentando executar");
+        new RestTemplate()
+                .getForEntity("http://localhost:8765/book-service/foo-ba",
+                        String.class);
 
         return "foo bar :o";
+    }
+
+    public String fallbackMethod(Exception ex){
+        return "outra mensagem foo-bar";
     }
 }

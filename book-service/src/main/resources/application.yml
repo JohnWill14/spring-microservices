@@ -7,8 +7,9 @@ eureka:
 resilience4j:
   retry:
     instances:
-      dafault:
+      default:
         max-attempts: 5
+        wait-duration: 1s
 
 spring:
   application:
