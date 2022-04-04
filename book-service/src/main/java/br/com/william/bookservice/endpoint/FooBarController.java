@@ -1,6 +1,7 @@
 package br.com.william.bookservice.endpoint;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -16,12 +17,13 @@ import org.springframework.web.client.RestTemplate;
 public class FooBarController {
     @GetMapping("foo-bar")
 //    @Retry(name = "default", fallbackMethod = "fallbackMethod")
-    @CircuitBreaker(name = "default", fallbackMethod = "fallbackMethod")
+//    @CircuitBreaker(name = "default", fallbackMethod = "fallbackMethod")
+    @RateLimiter(name = "default")
     public String fooBar(){
-       log.info("Tentando executar");
-        new RestTemplate()
-                .getForEntity("http://localhost:8765/book-service/foo-ba",
-                        String.class);
+//       log.info("Tentando executar");
+//        new RestTemplate()
+//                .getForEntity("http://localhost:8765/book-service/foo-ba",
+//                        String.class);
 
         return "foo bar :o";
     }
