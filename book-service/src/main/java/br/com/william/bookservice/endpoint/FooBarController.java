@@ -1,5 +1,6 @@
 package br.com.william.bookservice.endpoint;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -14,7 +15,8 @@ import org.springframework.web.client.RestTemplate;
 @Log4j2
 public class FooBarController {
     @GetMapping("foo-bar")
-    @Retry(name = "default", fallbackMethod = "fallbackMethod")
+//    @Retry(name = "default", fallbackMethod = "fallbackMethod")
+    @CircuitBreaker(name = "default", fallbackMethod = "fallbackMethod")
     public String fooBar(){
        log.info("Tentando executar");
         new RestTemplate()
