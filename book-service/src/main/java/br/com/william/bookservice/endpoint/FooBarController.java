@@ -1,5 +1,6 @@
 package br.com.william.bookservice.endpoint;
 
+import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
@@ -18,7 +19,7 @@ public class FooBarController {
     @GetMapping("foo-bar")
 //    @Retry(name = "default", fallbackMethod = "fallbackMethod")
 //    @CircuitBreaker(name = "default", fallbackMethod = "fallbackMethod")
-    @RateLimiter(name = "default")
+    @Bulkhead(name = "default")
     public String fooBar(){
 //       log.info("Tentando executar");
 //        new RestTemplate()
