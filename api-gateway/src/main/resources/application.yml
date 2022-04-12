@@ -9,17 +9,6 @@ spring:
     name: api-gateway
   cloud:
     gateway:
-#      discovery:
-#        locator:
-#          enabled: true
-#          lower-case-service-id: true
-
-sleuth:
-  sampler:
-    probability: 1
-    #probability: 0.05 producao
-#  zipkin:
-#    base-url: http://localhost:9411
       discovery:
         locator:
           enabled: true
@@ -38,3 +27,15 @@ sleuth:
             - Path=/v3/api-docs/**
           filters:
             - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+
+  #      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
+
+sleuth:
+  sampler:
+    probability: 1
+    #probability: 0.05 producao
+#  zipkin:
+#    base-url: http://localhost:9411
