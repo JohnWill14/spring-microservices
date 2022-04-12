@@ -27,7 +27,6 @@ spring:
     schemas: cambio-service
     user: root
     password: gandalf
-<<<<<<< HEAD
 sleuth:
   sampler:
     probability: 1
