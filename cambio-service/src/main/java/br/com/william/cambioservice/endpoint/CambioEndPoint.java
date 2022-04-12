@@ -4,6 +4,7 @@ import br.com.william.cambioservice.model.Cambio;
 import br.com.william.cambioservice.servico.CambioService;
 import br.com.william.cambioservice.util.EnvironmentUtil;
 import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/cambio-service")
 @AllArgsConstructor
+@Log4j2
 public class CambioEndPoint {
     private CambioService cambioService;
     private EnvironmentUtil environmentUtil;
@@ -30,6 +32,7 @@ public class CambioEndPoint {
         Cambio cambio = cambioService.findCambioByFromCurrencyAndToCurrency(from, to);
         cambio = cambioService.CalculateCambioForAmount(cambio, amount);
         cambio.setEnvironment(environmentUtil.getLocalSeverPort());
+        log.info("get Cambio is called with -> {}, {} and {}",amount, from, to);
 
         return ResponseEntity.ok(cambio);
     }

@@ -27,3 +27,9 @@ spring:
     schemas: cambio-service
     user: root
     password: gandalf
+sleuth:
+  sampler:
+    probability: 1
+    #probability: 0.05 producao
+#  zipkin:
+#    base-url: http://localhost:9411

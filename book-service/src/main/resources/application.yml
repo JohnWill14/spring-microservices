@@ -44,3 +44,7 @@ spring:
     schemas: book-service
     user: root
     password: gandalf
+sleuth:
+  sampler:
+    probability: 1
+    #probability: 0.05 producao
