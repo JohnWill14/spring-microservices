@@ -27,9 +27,14 @@ spring:
     schemas: cambio-service
     user: root
     password: gandalf
+<<<<<<< HEAD
 sleuth:
   sampler:
     probability: 1
     #probability: 0.05 producao
 #  zipkin:
 #    base-url: http://localhost:9411
+springdoc:
+  show-actuator: true
+  api-docs:
+    path: cambio-service/v3/api-docs

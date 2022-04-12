@@ -20,3 +20,21 @@ sleuth:
     #probability: 0.05 producao
 #  zipkin:
 #    base-url: http://localhost:9411
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: cambio-service
+          uri: lb://cambio-service
+          predicates:
+            - Path=/cambio-service/**
+        - id: book-service
+          uri: lb://book-service
+          predicates:
+            - Path=/book-service/**
+        - id: openapi
+          uri: lb://api-gateway
+          predicates:
+            - Path=/v3/api-docs/**
+          filters:
+            - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
