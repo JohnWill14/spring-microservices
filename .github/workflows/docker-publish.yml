@@ -37,3 +37,7 @@ jobs:
       - name: Build Eureka container image
         working-directory: ./naming-server
         run: mvn spring-boot:build-image -DskipTests
+      
+      - name: Build API GATEWAY container image
+        working-directory: ./api-gateway
+        run: mvn spring-boot:build-image -DskipTests
