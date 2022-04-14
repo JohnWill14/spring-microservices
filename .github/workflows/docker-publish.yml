@@ -39,15 +39,15 @@ jobs:
         run: mvn spring-boot:build-image -DskipTests
       
       - name: Build API GATEWAY container image
-        working-directory: ./api-gateway
+        working-directory: ./16-zipkin-sleuth/api-gateway
         run: mvn spring-boot:build-image -DskipTests
       
       - name: Build book container image
-        working-directory: ./api-gateway
+        working-directory: ./16-zipkin-sleuth/api-gateway
         run: mvn clean package -DskipTests  
         
       - name: Build cambio container image
-        working-directory: ./api-gateway
+        working-directory: ./16-zipkin-sleuth/api-gateway
         run: mvn clean package -DskipTests
         
       - name: Docker Compose build
