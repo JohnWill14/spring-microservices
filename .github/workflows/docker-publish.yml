@@ -51,7 +51,7 @@ jobs:
         run: mvn clean package -DskipTests
         
       - name: Docker Compose build
-        working-directory: .
+        working-directory: ./16-zipkin-sleuth
         run: docker-compose build     
         
       - name: push to docker hub container registry
