@@ -1,0 +1,16 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/JohnWill14/example-config-server
+          #username: repositorio privado
+          #password: repositorio privado
+          default-label: main # branch
+          search-paths:
+            - 'greeting-service'
