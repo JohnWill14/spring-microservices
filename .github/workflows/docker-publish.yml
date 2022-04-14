@@ -35,19 +35,19 @@ jobs:
           java-version: '16'
           distribution: 'adopt'
       - name: Build Eureka container image
-        working-directory: ./naming-server
+        working-directory: ./16-zipkin-sleuth/naming-server
         run: mvn spring-boot:build-image -DskipTests
       
       - name: Build API GATEWAY container image
-        working-directory: ./api-gateway
+        working-directory: ./16-zipkin-sleuth/api-gateway
         run: mvn spring-boot:build-image -DskipTests
       
       - name: Build book container image
-        working-directory: ./book-service
+        working-directory: ./16-zipkin-sleuth/book-service
         run: mvn clean package -DskipTests  
         
       - name: Build cambio container image
-        working-directory: ./cambio-service
+        working-directory: ./16-zipkin-sleuth/cambio-service
         run: mvn clean package -DskipTests
         
       - name: Docker Compose build
